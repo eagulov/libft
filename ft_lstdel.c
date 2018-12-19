@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/13 15:50:35 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/17 23:25:41 by eagulov          ###   ########.fr       */
+/*   Created: 2018/12/17 15:27:59 by eagulov           #+#    #+#             */
+/*   Updated: 2018/12/17 23:54:53 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	char			c;
-	unsigned int	num;
+	t_list	*tmp;
+	t_list	*next;
 
-	if (nb < 0)
+	tmp = *alst;
+	if (del != NULL)
 	{
-		write(1, "-", 1);
-		num = (-1) * nb;
+		while (tmp != NULL)
+		{
+			next = tmp->next;
+			del(tmp->content, tmp->content_size);
+			free(tmp);
+			tmp = next;
+		}
+		*alst = NULL;
 	}
-	else
-		num = nb;
-	if (num > 9)
-		ft_putnbr(num / 10);
-	c = num % 10 + '0';
-	write(1, &c, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 18:17:43 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/15 18:15:44 by eagulov          ###   ########.fr       */
+/*   Updated: 2018/12/17 23:30:52 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	char c;
+	char			c;
+	unsigned int	num;
 
 	if (nb < 0)
 	{
 		write(fd, "-", 1);
-		nb = -nb;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		c = nb % 10 + '0';
-		write(1, &c, 1);
+		num = (-1) * nb;
 	}
 	else
-	{
-		c = nb + '0';
-		write(fd, &c, 1);
-	}
+		num = nb;
+	if (num > 9)
+		ft_putnbr_fd(num / 10, fd);
+	c = num % 10 + '0';
+	write(fd, &c, 1);
 }

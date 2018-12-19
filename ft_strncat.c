@@ -6,26 +6,26 @@
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 13:56:54 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/15 18:21:57 by eagulov          ###   ########.fr       */
+/*   Updated: 2018/12/17 22:51:02 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *str1, const char *str2, size_t n)
 {
 	size_t i;
 	size_t j;
 
 	i = 0;
 	j = 0;
-	while (s1[i] != '\0')
+	while (str1[i] != '\0')
 		i++;
-	while (s2[j] != '\0' && j < n)
+	while (str2[j] != '\0' && j < n)
 	{
-		s1[i + j] = s2[j];
+		str1[i + j] = str2[j];
 		j++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	str1[i + j] = '\0';
+	return (str1);
 }

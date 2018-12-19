@@ -6,7 +6,7 @@
 #    By: eagulov <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/15 15:29:55 by eagulov           #+#    #+#              #
-#    Updated: 2018/12/15 18:02:28 by eagulov          ###   ########.fr        #
+#    Updated: 2018/12/18 00:05:30 by eagulov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_toupper.c \
 	  ft_putchar_fd.c \
 	  ft_putendl.c \
 	  ft_putendl_fd.c \
-	  t_putstr.c \
+	  ft_putstr.c \
 	  ft_putstr_fd.c \
 	  ft_putnbr.c \
 	  ft_putnbr_fd.c \
@@ -66,6 +66,7 @@ SRC = ft_toupper.c \
 	  ft_strtrim.c \
 	  ft_lstnew.c \
 	  ft_lstdelone.c \
+	  ft_lstdel.c \
 	  ft_lstadd.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \

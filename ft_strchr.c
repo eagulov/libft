@@ -6,19 +6,19 @@
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 09:02:01 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/15 18:17:42 by eagulov          ###   ########.fr       */
+/*   Updated: 2018/12/17 22:49:42 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	while (*s != c)
+	while (*str != c)
 	{
-		if (*s == '\0')
+		if (*str == '\0')
 			return (0);
-		s++;
+		str++;
 	}
-	return ((char*)s);
+	return ((char*)str);
 }

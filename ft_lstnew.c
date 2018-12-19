@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/13 15:50:35 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/17 23:25:41 by eagulov          ###   ########.fr       */
+/*   Created: 2018/12/17 14:52:08 by eagulov           #+#    #+#             */
+/*   Updated: 2018/12/17 15:04:27 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char			c;
-	unsigned int	num;
+	t_list	*new;
 
-	if (nb < 0)
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	if (content == NULL || content_size == 0)
 	{
-		write(1, "-", 1);
-		num = (-1) * nb;
+		new->content = NULL;
+		new->content_size = 0;
 	}
 	else
-		num = nb;
-	if (num > 9)
-		ft_putnbr(num / 10);
-	c = num % 10 + '0';
-	write(1, &c, 1);
+	{
+		new->content = ft_memalloc(content_size);
+		new->content = ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
+	}
+	return (new);
 }

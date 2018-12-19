@@ -6,7 +6,7 @@
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:50:51 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/15 18:31:15 by eagulov          ###   ########.fr       */
+/*   Updated: 2018/12/17 22:55:12 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (len > 0)
+		while (len-- > 0)
 		{
 			d[len] = s[len];
-			len--;
 		}
 	}
 	return (dst);

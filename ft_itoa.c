@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/13 15:50:35 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/17 23:25:41 by eagulov          ###   ########.fr       */
+/*   Created: 2018/12/17 20:08:09 by eagulov           #+#    #+#             */
+/*   Updated: 2018/12/17 20:15:46 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+char	*ft_itoa(int n)
 {
-	char			c;
-	unsigned int	num;
+	int				col;
+	int				on;
+	char			*str;
+	unsigned int	temp;
 
-	if (nb < 0)
+	on = n < 0 ? 1 : 0;
+	col = n;
+	temp = (n < 0) ? (-n) : n;
+	while (n > 8 || n < -8)
 	{
-		write(1, "-", 1);
-		num = (-1) * nb;
+		on++;
+		n = n / 10;
 	}
-	else
-		num = nb;
-	if (num > 9)
-		ft_putnbr(num / 10);
-	c = num % 10 + '0';
-	write(1, &c, 1);
+	if (!(str = (char *)malloc(sizeof(char) * (on + 2))))
+		return (NULL);
+	str[on + 1] = '\0';
+	while (on > -1)
+	{
+		str[on--] = (temp % 10) + '0';
+		temp = temp / 10;
+	}
+	str[0] = col < 0 ? '-' : str[0];
+	return (str);
 }
