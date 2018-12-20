@@ -6,13 +6,19 @@
 #    By: eagulov <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/15 15:29:55 by eagulov           #+#    #+#              #
-#    Updated: 2018/12/18 00:05:30 by eagulov          ###   ########.fr        #
+#    Updated: 2018/12/19 20:54:39 by eagulov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ft_toupper.c \
+SRC = my_314area.c \
+	  my_sum.c \
+	  my_fahrenheit_celsius.c \
+	  my_celsius_fahrenheit.c \
+	  my_minimum.c \
+	  my_maximum.c \
+	  ft_toupper.c \
 	  ft_tolower.c \
 	  ft_isprint.c \
 	  ft_isalnum.c \

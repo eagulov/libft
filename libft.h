@@ -6,7 +6,7 @@
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 14:19:42 by eagulov           #+#    #+#             */
-/*   Updated: 2018/12/18 17:45:19 by eagulov          ###   ########.fr       */
+/*   Updated: 2018/12/19 20:54:31 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+float				my_314area(float radius);
+long				my_sum(long a, long b);
+float				my_fahrenheit_celsius(float fahrenheit);
+float				my_celsius_fahrenheit(float celsius);
+int					my_minimum(int a, int b);
+int					my_maximum(int a, int b);
 
 int					ft_toupper(int x);
 int					ft_tolower(int x);
